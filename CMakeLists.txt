@@ -50,12 +50,24 @@ dr_add_gtest(param_isometry         test/param_isometry.cpp)
 dr_add_gtest(yaml                   test/yaml.cpp)
 dr_add_gtest(quaternion_conversions test/quaternion_conversions.cpp)
 
-target_link_libraries(${PROJECT_NAME}_test_param_vector     ${PROJECT_NAME})
-target_link_libraries(${PROJECT_NAME}_test_param_quaternion ${PROJECT_NAME})
-target_link_libraries(${PROJECT_NAME}_test_param_isometry   ${PROJECT_NAME})
-target_link_libraries(${PROJECT_NAME}_test_eigen_to_tf      ${PROJECT_NAME})
-target_link_libraries(${PROJECT_NAME}_test_tf_to_eigen      ${PROJECT_NAME})
-target_link_libraries(${PROJECT_NAME}_test_yaml             ${PROJECT_NAME})
+target_link_libraries(${PROJECT_NAME}_test_average pthread)
+target_link_libraries(${PROJECT_NAME}_test_axes pthread)
+target_link_libraries(${PROJECT_NAME}_test_box pthread)
+target_link_libraries(${PROJECT_NAME}_test_compare pthread)
+target_link_libraries(${PROJECT_NAME}_test_plane pthread)
+target_link_libraries(${PROJECT_NAME}_test_translate pthread)
+target_link_libraries(${PROJECT_NAME}_test_rotate pthread)
+target_link_libraries(${PROJECT_NAME}_test_ros_to_eigen pthread)
+target_link_libraries(${PROJECT_NAME}_test_eigen_to_ros pthread)
+target_link_libraries(${PROJECT_NAME}_test_quaternion_conversions pthread)
+
+
+target_link_libraries(${PROJECT_NAME}_test_param_vector      ${PROJECT_NAME} pthread)
+target_link_libraries(${PROJECT_NAME}_test_param_quaternion  ${PROJECT_NAME} pthread)
+target_link_libraries(${PROJECT_NAME}_test_param_isometry    ${PROJECT_NAME} pthread)
+target_link_libraries(${PROJECT_NAME}_test_eigen_to_tf       ${PROJECT_NAME} pthread)
+target_link_libraries(${PROJECT_NAME}_test_tf_to_eigen       ${PROJECT_NAME} pthread)
+target_link_libraries(${PROJECT_NAME}_test_yaml              ${PROJECT_NAME} pthread)
 
 install(
 	TARGETS "${PROJECT_NAME}"
