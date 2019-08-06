@@ -5,7 +5,8 @@ namespace dr {
 /// Convert a vector to YAML.
 std::string toYaml(const Eigen::Vector3d & vector) {
 	std::string result;
-	result.reserve(50);
+	constexpr size_t RESULT_SIZE = 50;
+	result.reserve(RESULT_SIZE);
 
 	result += "{x: ";
 	result += std::to_string(vector.x());
@@ -23,7 +24,8 @@ std::string toYaml(const Eigen::Vector3d & vector) {
 /// Convert a quaternion to YAML.
 std::string toYaml(const Eigen::Quaterniond & quaternion) {
 	std::string result;
-	result.reserve(50);
+	constexpr size_t RESULT_SIZE = 50;
+	result.reserve(RESULT_SIZE);
 
 	result += "{x: ";
 	result += std::to_string(quaternion.x());
@@ -43,7 +45,8 @@ std::string toYaml(const Eigen::Quaterniond & quaternion) {
 /// Convert an isometry to YAML.
 std::string toYaml(const Eigen::Isometry3d & pose, std::string const & indent) {
 	std::string result;
-	result.reserve(100);
+	constexpr size_t RESULT_SIZE = 100;
+	result.reserve(RESULT_SIZE);
 
 	result.append(indent);
 	result.append("position:    ");
@@ -57,7 +60,8 @@ std::string toYaml(const Eigen::Isometry3d & pose, std::string const & indent) {
 
 std::string toYaml(PoseHeader const & header, std::string const & indent) {
 	std::string result;
-	result.reserve(100);
+	constexpr size_t RESULT_SIZE = 100;
+	result.reserve(RESULT_SIZE);
 
 	result.append(indent);
 	result.append("  ");
@@ -73,7 +77,8 @@ std::string toYaml(PoseHeader const & header, std::string const & indent) {
 
 std::string toYaml(Pose const & pose, std::string const & indent) {
 	std::string result;
-	result.reserve(100);
+	constexpr size_t RESULT_SIZE = 100;
+	result.reserve(RESULT_SIZE);
 
 	result.append(toYaml(pose.header, indent));
 	result.push_back('\n');
@@ -81,4 +86,4 @@ std::string toYaml(Pose const & pose, std::string const & indent) {
 	return result;
 }
 
-}
+} //namespace dr
