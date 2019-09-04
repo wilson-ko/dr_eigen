@@ -11,15 +11,15 @@ int main(int argc, char * * argv) {
 
 namespace dr {
 
-TEST(TranslateTest, vectorRepresentation) {
-	ASSERT_EQ(Eigen::Vector3d(0, 0, 0), translate(0, 0, 0).translation());
-	ASSERT_EQ(Eigen::Vector3d(1, 0, 0), translate(1, 0, 0).translation());
-	ASSERT_EQ(Eigen::Vector3d(0, 1, 0), translate(0, 1, 0).translation());
-	ASSERT_EQ(Eigen::Vector3d(0, 0, 1), translate(0, 0, 1).translation());
+TEST(TranslateTest, vectorRepresentation) { //NOLINT
+	ASSERT_EQ(Eigen::Vector3d(0, 0, 0), translate(0, 0, 0).translation()); //NOLINT
+	ASSERT_EQ(Eigen::Vector3d(1, 0, 0), translate(1, 0, 0).translation()); //NOLINT
+	ASSERT_EQ(Eigen::Vector3d(0, 1, 0), translate(0, 1, 0).translation()); //NOLINT
+	ASSERT_EQ(Eigen::Vector3d(0, 0, 1), translate(0, 0, 1).translation()); //NOLINT
 
-	ASSERT_EQ(Eigen::Vector3d(-1, 0, 0), translate(-1, 0, 0).translation());
-	ASSERT_EQ(Eigen::Vector3d(0, -1, 0), translate(0, -1, 0).translation());
-	ASSERT_EQ(Eigen::Vector3d(0, 0, -1), translate(0, 0, -1).translation());
+	ASSERT_EQ(Eigen::Vector3d(-1, 0, 0), translate(-1, 0, 0).translation()); //NOLINT
+	ASSERT_EQ(Eigen::Vector3d(0, -1, 0), translate(0, -1, 0).translation()); //NOLINT
+	ASSERT_EQ(Eigen::Vector3d(0, 0, -1), translate(0, 0, -1).translation()); //NOLINT
 }
 
-}
+} //namespace dr
